@@ -162,6 +162,9 @@ def sort():
         'unknown': UNKNOWN_FOLDER
     }.get(result)
 
+    if dest_folder is None:
+        return redirect(url_for('index'))
+
     dest_path = os.path.join(dest_folder, img_name)
 
     with lock:
